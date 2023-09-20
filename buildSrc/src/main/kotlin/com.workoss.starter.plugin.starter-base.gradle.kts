@@ -9,8 +9,6 @@ plugins {
 group = project.findProperty("group") as String
 version = project.findProperty("version") as String
 
-assert(group != null)
-assert(version != null)
 
 repositories {
     maven {
@@ -39,6 +37,9 @@ tasks.withType<Jar> {
         "Created-By",
         System.getProperty("java.version") + " (" + System.getProperty("java.specification.vendor") + ")"
     )
+    manifest.attributes.put("Implementation-Title", project.getName());
+    manifest.attributes.put("Implementation-Version", project.getVersion().toString());
+    manifest.attributes.put("Automatic-Module-Name", project.getName().replace("-", "."));
     manifest.attributes.putIfAbsent("Gradle-Version", GradleVersion.current())
 }
 
