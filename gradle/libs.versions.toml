@@ -1,0 +1,22 @@
+[versions]
+spring = "5.3.27"
+springBoot = "3.1.1"
+kotlin = "1.9.0"
+springDependencyManagement = "1.1.0"
+gradleChangelogPlugin = "2.2.0"
+
+lombok = "1.18.30"
+mapstruct = "1.5.5.Final"
+
+[libraries]
+spring-boot-plugin = { group = "org.springframework.boot", name = "spring-boot-gradle-plugin", version.ref = "springBoot" }
+
+lombok = {group = "org.projectlombok", name = "lombok", version.ref = "lombok"}
+mapstruct = {group="org.mapstruct", name="mapstruct-processor", version.ref="mapstruct"}
+
+[bundles]
+
+
+[plugins]
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "springDependencyManagement" }
+changelog = { id = "org.jetbrains.changelog", version.ref = "gradleChangelogPlugin" }
