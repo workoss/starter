@@ -16,6 +16,9 @@ repositories {
     maven { setUrl("https://maven.aliyun.com/repository/public") }
 }
 
+dependencies {
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.21.0")
+}
 
 
 

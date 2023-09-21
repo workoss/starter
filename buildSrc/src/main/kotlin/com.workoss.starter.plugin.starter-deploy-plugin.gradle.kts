@@ -1,5 +1,4 @@
 import com.workoss.starter.plugin.ProjectUtils
-import gradle.kotlin.dsl.accessors._c0f91596fc71b550e6fcd31d6752537b.java
 import java.net.URI
 
 plugins {
@@ -8,16 +7,11 @@ plugins {
     signing
 }
 
-
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             project.plugins.withType(JavaPlugin::class.java){
                 from(components["java"])
-                java {
-                    withJavadocJar()
-                    withSourcesJar()
-                }
             }
             project.plugins.withType(JavaPlatformPlugin::class.java){
                 from(components["javaPlatform"])
@@ -65,8 +59,7 @@ publishing {
         repositories {
             maven {
                 name = "ossrh"
-                url =
-                    URI.create(if (ProjectUtils.isRelease(project)) "https://s01.oss.sonatype.org/service/local" else "https://s01.oss.sonatype.org/content/repositories/snapshots")
+                url = URI.create(if (ProjectUtils.isRelease(project)) "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/" else "https://s01.oss.sonatype.org/content/repositories/snapshots/")
                 credentials {
                     username = project.findProperty("OSSRH_USERNAME") as String
                     password = project.findProperty("OSSRH_PASSWORD") as String

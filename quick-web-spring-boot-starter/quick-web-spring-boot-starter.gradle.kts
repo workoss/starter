@@ -1,10 +1,7 @@
 plugins {
-    `java-library`
-    id("com.workoss.starter.plugin.starter-deploy-plugin")
+    id("com.workoss.starter.plugin.starter-project-plugin")
 }
-
 
 dependencies {
     api(project(":domain-starter"))
 }
-

@@ -8,6 +8,7 @@ plugins {
 
 group = project.findProperty("group") as String
 version = project.findProperty("version") as String
+description = project.findProperty("description") as String
 
 
 repositories {
@@ -21,7 +22,7 @@ repositories {
     }
     maven {
         name = "ossrh-snapshot"
-        url = URI.create("https://s01.oss.sonatype.org/content/repositories/snapshots")
+        url = URI.create("https://oss.sonatype.org/content/repositories/snapshots")
     }
     maven("https://maven.aliyun.com/repository/public")
     maven("https://maven.aliyun.com/repository/central")
@@ -57,12 +58,13 @@ tasks.withType<JavaCompile> {
 
 }
 
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
 
 tasks.withType<Javadoc>{
-    var docOption = options as StandardJavadocDocletOptions
+    val docOption = options as StandardJavadocDocletOptions
     docOption.addBooleanOption("html5", true)
     docOption.addStringOption("Xdoclint:none", "-quiet")
 }
