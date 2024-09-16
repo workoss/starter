@@ -6,7 +6,7 @@ springDependencyManagement = "1.1.6"
 gradleChangelogPlugin = "2.2.1"
 
 lombok = "1.18.34"
-mapstruct = "1.6.0"
+mapstruct = "1.6.1"
 
 [libraries]
 spring-boot-plugin = { group = "org.springframework.boot", name = "spring-boot-gradle-plugin", version.ref = "springBoot" }
