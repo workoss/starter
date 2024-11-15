@@ -5,7 +5,7 @@ kotlin = "1.9.0"
 springDependencyManagement = "1.1.6"
 gradleChangelogPlugin = "2.2.1"
 
-lombok = "1.18.34"
+lombok = "1.18.36"
 mapstruct = "1.6.2"
 
 [libraries]
